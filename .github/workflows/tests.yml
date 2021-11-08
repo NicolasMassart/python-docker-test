@@ -1,0 +1,15 @@
+---
+name: Test
+
+on: push
+
+jobs:
+  test:
+    name: run test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build docker images
+        run: docker build . -t local-python-test
+      - name: Run tests
+        run: docker run local-python-test

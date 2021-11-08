@@ -1,0 +1,8 @@
+---
+version: '3.2'
+services:
+  mkdocs:
+    container_name: python-debug
+    image: my-python:debug
+    build:
+      context: .
